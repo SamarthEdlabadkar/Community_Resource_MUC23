@@ -4,15 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>
         {% block title %}
         {% endblock %}
     </title>
 </head>
 
-<body>
+<body class="bg-white">
+    <header class="header bg-red-700 p-4 flex justify-between items-center">
+        <h1 class="website-title text-yellow-400 text-2xl font-semibold">CRL</h1>
+        <div class="button-container text-right">
+            <button
+                class="text-white hover:bg-black-800 py-2 px-4 rounded-md cursor-pointer border border-black">Login</button>
+            <button
+                class="text-white hover:bg-black-800 py-2 px-4 rounded-md cursor-pointer ml-2 border border-black">Signup</button>
+        </div>
+    </header>
     {% block content %}
     {% endblock %}
+    <footer class="footer bg-black text-white p-8 font-semibold flex justify-between items-center w-full bottom-0">
+        <p class="left-sentence">This is not an official UC website. Refer <a href="https://www.uc.edu/"
+                class="text-blue-400">here</a> for more updated information.</p>
+        <p class="right-sentence">Credits: Parth Sardeshmukh, Samarth Edlabadkar, Lakshya Jhuria, Vedansh Singh</p>
+    </footer>
 </body>
 
 </html>

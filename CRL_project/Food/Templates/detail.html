@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{name}} | CRL
+{% endblock %}
+
+{% block content %}
+
+<div class="bg-white p-4 rounded shadow min-h-full">
+    <div class="min-w-max h-full p-4 border border-gray-300 rounded-lg">
+        <div class="pl-2 mt-4 font-bold text-xl text-black">{{name}} - {{category}}</div>
+        <div class="pl-2 mt-4 text-lg">{{description}}</div>
+        <div class="pl-2 mt-4 text-lg">{{address}}</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Samarth
+Welcome | CRL
 {% endblock %}
 
 {% block content %}
-Parth
+<div class="container mx-auto py-4">
+    <h1 class="text-2xl font-semibold text-center mb-4">Home | Page</h1>
+    <div class="grid grid-cols-3 gap-8">
+        {% for place in places %}
+        <div class="bg-white p-4 rounded shadow">
+            <a href="{% url 'service' place.name %}">
+                <div class="min-w-max h-48 p-4 border border-gray-300 rounded-lg flex flex-col">
+                    <div class="pl-2 mt-4 font-bold">{{place.name}}</div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

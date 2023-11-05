@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Food Home | CRL
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto py-4">
+    <h1 class="text-2xl font-semibold text-center mb-4">Food Home | Page</h1>
+
+    <h2 class="text-2xl font-semibold text-center mb-4">Meal Plan Places</h2>
+    <div class="grid grid-cols-3 gap-8">
+        {% for place in meal_plan_places %}
+        <div class="bg-white p-4 rounded shadow">
+            <a href="{% url 'detail_page' place.name place.category %}">
+                <div class=" min-w-max h-48 p-4 border border-gray-300 rounded-lg flex flex-col">
+                    <img class="pl-2 w-24 h-24" src="../static/dining_hall.png">
+                </div>
+                <div class="pl-2 mt-4 font-bold">{{place.name}}</div>
+                <div class="pl-2 mt-4 text-sm">{{place.description}}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <h2 class="text-2xl font-semibold text-center mb-4">Meal Exchange Places</h2>
+    <div class="grid grid-cols-3 gap-8">
+        {% for place in meal_exchange_places %}
+        <div class="bg-white p-4 rounded shadow">
+            <a href="{% url 'detail_page' place.name place.category %}">
+                <div class=" min-w-max h-48 p-4 border border-gray-300 rounded-lg flex flex-col">
+                    <img class="pl-2 w-24 h-24" src="../static/dining_hall.png">
+                </div>
+                <div class="pl-2 mt-4 font-bold">{{place.name}}</div>
+                <div class="pl-2 mt-4 text-sm">{{place.description}}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="text-2xl font-semibold text-center mb-4">Retail Places</h2>
+    <div class="grid grid-cols-3 gap-8">
+        {% for place in retail_places %}
+        <div class="bg-white p-4 rounded shadow">
+            <a href="{% url 'detail_page' place.name place.category %}">
+                <div class=" min-w-max h-48 p-4 border border-gray-300 rounded-lg flex flex-col">
+                    <img class="pl-2 w-24 h-24" src="../static/dining_hall.png">
+                </div>
+                <div class="pl-2 mt-4 font-bold">{{place.name}}</div>
+                <div class="pl-2 mt-4 text-sm">{{place.description}}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from Food.views import home
+from Food.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('food/',include('Food.urls')),
+
+    path('',main_home, name='home'),
+    path('<str:service>/',home, name='service'),
+    
+    path('locations/<str:name>/<str:category>',detail, name='detail_page'),
 ]
